@@ -22,10 +22,6 @@ matrix:
       osx_image: xcode7.3
       env: TARGET_CPU=x64
 
-    - os: osx
-      osx_image: xcode7.3
-      env: TARGET_CPU=x64
-
 language: cpp
 
 
@@ -41,6 +37,16 @@ before_install:
   else
     if ! brew ls --version cmake &>/dev/null; then brew update && brew install cmake; fi
   fi
+
+- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+- PATH="${DEPS_DIR}/depot_tools:$PATH"
+- mkdir breakpad
+- cd breakpad
+- fetch breakpad
+- cd src
+- ./configure
+- sudo make install
+
 - cd ${TRAVIS_BUILD_DIR}
 - cmake --version
 
@@ -52,4 +58,4 @@ install:
 - cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=. -DTARGET_CPU=$TARGET_CPU ..
 
 script:
-- make -j 4 style test package
+- make style test package
