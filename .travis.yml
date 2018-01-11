@@ -10,6 +10,7 @@ matrix:
           packages:
           - gcc-4.8
           - g++-4.8
+          - libuv-dev
 
     - os: linux
       sudo: required
