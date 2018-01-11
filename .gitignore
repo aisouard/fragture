@@ -33,3 +33,5 @@
 
 # IDEA
 .idea/
+cmake-build-debug/
+out/
