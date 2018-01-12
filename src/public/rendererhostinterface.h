@@ -20,25 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_MODULEABSTRACT_H_
-#define PUBLIC_MODULEABSTRACT_H_
+#ifndef PUBLIC_RENDERERHOSTINTERFACE_H_
+#define PUBLIC_RENDERERHOSTINTERFACE_H_
 
 namespace Public {
-class ModuleAbstract {
- public:
-  virtual ~ModuleAbstract() {}
-
-  void *GetHandle() {
-    return _handle;
-  }
-
-  void SetHandle(void *handle) {
-    _handle = handle;
-  }
-
- private:
-  void *_handle;
+class RendererHostInterface {
 };
-}  // namespace Public
+}
 
-#endif  // PUBLIC_MODULEABSTRACT_H_
+#endif  // PUBLIC_RENDERERHOSTINTERFACE_H_

@@ -22,6 +22,14 @@
 project(public)
 
 set(SOURCES
-        moduleabstract.h)
+        displayhostinterface.h
+        displaymoduleinterface.h
+        gamehostinterface.h
+        gamemoduleinterface.h
+        moduleabstract.h
+        playerhostinterface.h
+        playermoduleinterface.h
+        rendererhostinterface.h
+        renderermoduleinterface.h)
 
 add_style_check_target(public_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)

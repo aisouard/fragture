@@ -20,25 +20,19 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_MODULEABSTRACT_H_
-#define PUBLIC_MODULEABSTRACT_H_
+#ifndef PUBLIC_GAMEMODULEINTERFACE_H_
+#define PUBLIC_GAMEMODULEINTERFACE_H_
+
+#include "public/moduleabstract.h"
 
 namespace Public {
-class ModuleAbstract {
+class GameModuleInterface : public ModuleAbstract {
  public:
-  virtual ~ModuleAbstract() {}
+  virtual ~GameModuleInterface() {}
 
-  void *GetHandle() {
-    return _handle;
-  }
-
-  void SetHandle(void *handle) {
-    _handle = handle;
-  }
-
- private:
-  void *_handle;
+  virtual void Init() = 0;
+  virtual void Shutdown() = 0;
 };
-}  // namespace Public
+}
 
-#endif  // PUBLIC_MODULEABSTRACT_H_
+#endif  // PUBLIC_GAMEMODULEINTERFACE_H_
