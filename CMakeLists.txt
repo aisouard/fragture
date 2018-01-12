@@ -35,6 +35,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
 find_package(Breakpad REQUIRED)
 find_package(LibUV REQUIRED)
+find_package(Threads REQUIRED)
 
 include(ExternalProject)
 include(CppLint)

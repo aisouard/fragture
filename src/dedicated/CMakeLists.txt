@@ -24,8 +24,6 @@ project(dedicated)
 include_directories(${LIBUV_INCLUDE_DIR})
 include_directories(${BREAKPAD_INCLUDE_DIR})
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-
 set(SOURCES
         main.cpp)
 
@@ -33,7 +31,8 @@ add_executable(fragtureded ${SOURCES})
 target_link_libraries(fragtureded
         server
         ${BREAKPAD_LIBRARY}
-        ${LIBUV_LIBRARIES})
+        ${LIBUV_LIBRARIES}
+        ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}")
 
 add_style_check_target(dedicated_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
