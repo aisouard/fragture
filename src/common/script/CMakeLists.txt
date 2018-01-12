@@ -19,16 +19,16 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-add_subdirectory(display)
-add_subdirectory(renderer)
-add_subdirectory(base)
+project(common_script)
 
-include_directories(.)
-include_directories(${ICU_INCLUDE_DIRS})
-include_directories(${LIBUV_INCLUDE_DIRS})
+find_package(LuaJIT REQUIRED)
+include_directories(${LUAJIT_INCLUDE_DIR})
 
-add_subdirectory(public)
-add_subdirectory(common)
-add_subdirectory(client)
-add_subdirectory(server)
-add_subdirectory(dedicated)
+set(SOURCES
+        scriptmanager.h
+        scriptmanager.cpp)
+
+add_library(common_script STATIC ${SOURCES})
+target_link_libraries(common_script ${LUAJIT_LIBRARIES})
+
+add_style_check_target(common_script_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)

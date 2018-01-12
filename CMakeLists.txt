@@ -34,7 +34,9 @@ add_definitions(-Dnullptr=NULL)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
 find_package(Breakpad REQUIRED)
+set(LIBUV_USE_STATIC 1)
 find_package(LibUV REQUIRED)
+find_package(ICU COMPONENTS uc REQUIRED)
 find_package(Threads REQUIRED)
 
 include(ExternalProject)

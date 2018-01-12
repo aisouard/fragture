@@ -32,6 +32,7 @@ target_link_libraries(fragtureded
         server
         ${BREAKPAD_LIBRARY}
         ${LIBUV_LIBRARIES}
+        ${ICU_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}")
 

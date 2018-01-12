@@ -19,16 +19,6 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-add_subdirectory(display)
-add_subdirectory(renderer)
-add_subdirectory(base)
+project(common)
 
-include_directories(.)
-include_directories(${ICU_INCLUDE_DIRS})
-include_directories(${LIBUV_INCLUDE_DIRS})
-
-add_subdirectory(public)
-add_subdirectory(common)
-add_subdirectory(client)
-add_subdirectory(server)
-add_subdirectory(dedicated)
+add_subdirectory(script)
