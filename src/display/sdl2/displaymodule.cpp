@@ -20,4 +20,31 @@
  * IN THE SOFTWARE.
  */
 
+#include "public/moduleabstract.h"
 #include "display/sdl2/displaymodule.h"
+
+using Public::ModuleAbstract;
+
+namespace Display {
+namespace SDL2 {
+DisplayModule::DisplayModule(DisplayHostInterface *host) {
+}
+
+DisplayModule::~DisplayModule() {
+}
+
+void DisplayModule::Init() {
+}
+
+void DisplayModule::Shutdown() {
+}
+
+extern "C" ModuleAbstract* CreateModuleInstance(DisplayHostInterface *host) {
+  return new DisplayModule(host);
+}
+
+extern "C" void DestroyModuleInstance(ModuleAbstract *module) {
+  delete reinterpret_cast<DisplayModule*>(module);
+}
+}  // namespace SDL2
+}  // namespace Display

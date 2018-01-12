@@ -20,4 +20,31 @@
  * IN THE SOFTWARE.
  */
 
+#include "public/moduleabstract.h"
 #include "renderer/opengl/renderermodule.h"
+
+using Public::ModuleAbstract;
+
+namespace Renderer {
+namespace OpenGL {
+RendererModule::RendererModule(RendererHostInterface *host) {
+}
+
+RendererModule::~RendererModule() {
+}
+
+void RendererModule::Init() {
+}
+
+void RendererModule::Shutdown() {
+}
+
+extern "C" ModuleAbstract* CreateModuleInstance(RendererHostInterface *host) {
+  return new RendererModule(host);
+}
+
+extern "C" void DestroyModuleInstance(ModuleAbstract *module) {
+  delete reinterpret_cast<RendererModule*>(module);
+}
+}  // namespace OpenGL
+}  // namespace Renderer

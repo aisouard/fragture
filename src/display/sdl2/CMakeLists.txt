@@ -25,7 +25,12 @@ set(SOURCES
         displaymodule.h
         displaymodule.cpp)
 
-add_library(display_sdl2 SHARED ${SOURCES})
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/displayhostinterface.h
+        ../../public/displaymoduleinterface.h)
+
+add_library(display_sdl2 SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(display_sdl2 PROPERTIES PREFIX "")
 set_target_properties(display_sdl2 PROPERTIES OUTPUT_NAME "display-sdl2-${TARGET_CPU}")
 

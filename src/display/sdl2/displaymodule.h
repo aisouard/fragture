@@ -24,10 +24,20 @@
 #define DISPLAY_SDL2_DISPLAYMODULE_H_
 
 #include "public/displaymoduleinterface.h"
+#include "public/displayhostinterface.h"
+
+using Public::DisplayHostInterface;
+using Public::DisplayModuleInterface;
 
 namespace Display {
 namespace SDL2 {
-class SDL2Display {
+class DisplayModule : public DisplayModuleInterface {
+public:
+  explicit DisplayModule(DisplayHostInterface *host);
+  ~DisplayModule();
+
+  void Init();
+  void Shutdown();
 };
 }  // namespace SDL2
 }  // namespace Display

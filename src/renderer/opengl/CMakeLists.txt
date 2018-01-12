@@ -25,7 +25,12 @@ set(SOURCES
         renderermodule.h
         renderermodule.cpp)
 
-add_library(renderer_opengl SHARED ${SOURCES})
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/rendererhostinterface.h
+        ../../public/renderermoduleinterface.h)
+
+add_library(renderer_opengl SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(renderer_opengl PROPERTIES PREFIX "")
 set_target_properties(renderer_opengl PROPERTIES OUTPUT_NAME "renderer-opengl-${TARGET_CPU}")
 

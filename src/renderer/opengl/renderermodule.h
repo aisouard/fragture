@@ -23,9 +23,21 @@
 #ifndef RENDERER_OPENGL_RENDERERMODULE_H_
 #define RENDERER_OPENGL_RENDERERMODULE_H_
 
+#include "public/renderermoduleinterface.h"
+#include "public/rendererhostinterface.h"
+
+using Public::RendererHostInterface;
+using Public::RendererModuleInterface;
+
 namespace Renderer {
 namespace OpenGL {
-class RendererModule {
+class RendererModule : public RendererModuleInterface {
+public:
+  explicit RendererModule(RendererHostInterface *host);
+  ~RendererModule();
+
+  void Init();
+  void Shutdown();
 };
 }  // namespace OpenGL
 }  // namespace Renderer
