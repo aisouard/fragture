@@ -35,7 +35,9 @@ before_install:
     export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     export CXX="g++-4.8" CC="gcc-4.8"
   else
-    if ! brew ls --version cmake &>/dev/null; then brew update && brew install cmake; fi
+    rvm --default use 2.3
+    brew update
+    if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
     brew install --HEAD libuv
   fi
 
