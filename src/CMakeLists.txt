@@ -19,11 +19,12 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-include_directories(.)
-
 add_subdirectory(display)
 add_subdirectory(renderer)
 add_subdirectory(base)
+
+include_directories(.)
+
 add_subdirectory(client)
 add_subdirectory(server)
 add_subdirectory(dedicated)
