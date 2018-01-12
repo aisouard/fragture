@@ -33,4 +33,3 @@ install(TARGETS game
         LIBRARY DESTINATION base)
 
 add_style_check_target(game_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style game_style)

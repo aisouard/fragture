@@ -33,4 +33,3 @@ install(TARGETS display_sdl2
         LIBRARY DESTINATION .)
 
 add_style_check_target(display_sdl2_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style display_sdl2_style)

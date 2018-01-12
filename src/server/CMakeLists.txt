@@ -28,4 +28,3 @@ set(SOURCES
 add_library(server STATIC ${SOURCES})
 
 add_style_check_target(server_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style server_style)

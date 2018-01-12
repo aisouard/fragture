@@ -33,4 +33,3 @@ install(TARGETS renderer_opengl
         LIBRARY DESTINATION .)
 
 add_style_check_target(renderer_opengl_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style renderer_opengl_style)

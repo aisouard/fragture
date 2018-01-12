@@ -61,5 +61,4 @@ if (BUILD_TESTS)
     include_directories(${GTEST_INCLUDE_DIRS})
 endif (BUILD_TESTS)
 
-add_custom_target(style)
 add_subdirectory(src)

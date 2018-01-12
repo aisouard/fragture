@@ -27,4 +27,3 @@ set(SOURCES
 add_library(shared STATIC ${SOURCES})
 
 add_style_check_target(shared_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style shared_style)

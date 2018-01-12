@@ -36,7 +36,6 @@ target_link_libraries(fragtureded
 set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}")
 
 add_style_check_target(dedicated_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style dedicated_style)
 
 install(TARGETS fragtureded
         RUNTIME DESTINATION .)

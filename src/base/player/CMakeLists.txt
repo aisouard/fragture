@@ -33,4 +33,3 @@ install(TARGETS player
         LIBRARY DESTINATION base)
 
 add_style_check_target(player_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style player_style)

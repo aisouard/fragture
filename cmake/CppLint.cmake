@@ -22,6 +22,8 @@ set(STYLE_FILTER)
 
 set(STYLE_CHECK_SCRIPT "${CMAKE_SOURCE_DIR}/tools/cpplint.py")
 
+add_custom_target(style)
+
 # Add a target that runs cpplint.py
 #
 # Parameters:
@@ -48,4 +50,5 @@ function(add_style_check_target TARGET_NAME SOURCES_LIST PROJECT_ROOT)
             COMMENT "Checking code style for ${PROJECT_NAME}."
             VERBATIM)
 
+    add_dependencies(style ${TARGET_NAME})
 endfunction(add_style_check_target)

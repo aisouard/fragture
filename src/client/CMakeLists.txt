@@ -36,7 +36,6 @@ target_link_libraries(fragture
 set_target_properties(fragture PROPERTIES SUFFIX "-${TARGET_CPU}")
 
 add_style_check_target(client_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
-add_dependencies(style client_style)
 
 install(TARGETS fragture
         RUNTIME DESTINATION .)
