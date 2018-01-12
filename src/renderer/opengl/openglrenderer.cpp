@@ -20,4 +20,4 @@
  * IN THE SOFTWARE.
  */
 
-#include "opengl/openglrenderer.h"
+#include "renderer/opengl/openglrenderer.h"

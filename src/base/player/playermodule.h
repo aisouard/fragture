@@ -23,8 +23,20 @@
 #ifndef PLAYER_PLAYERMODULE_H_
 #define PLAYER_PLAYERMODULE_H_
 
-namespace Game {
-class GameModule {
+#include "public/playerhostinterface.h"
+#include "public/playermoduleinterface.h"
+
+using Public::PlayerHostInterface;
+using Public::PlayerModuleInterface;
+
+namespace Player {
+class PlayerModule : public PlayerModuleInterface {
+ public:
+  explicit PlayerModule(PlayerHostInterface *host);
+  ~PlayerModule();
+
+  void Init();
+  void Shutdown();
 };
 };
 

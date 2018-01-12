@@ -21,5 +21,4 @@
 
 project(display)
 
-include_directories(.)
 add_subdirectory(sdl2)

@@ -20,4 +20,4 @@
  * IN THE SOFTWARE.
  */
 
-#include "sdl2/sdl2display.h"
+#include "display/sdl2/sdl2display.h"

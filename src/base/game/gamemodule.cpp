@@ -20,4 +20,29 @@
  * IN THE SOFTWARE.
  */
 
-#include "game/gamemodule.h"
+#include "public/moduleabstract.h"
+#include "base/game/gamemodule.h"
+
+using Public::ModuleAbstract;
+
+namespace Game {
+GameModule::GameModule(GameHostInterface *host) {
+}
+
+GameModule::~GameModule() {
+}
+
+void GameModule::Init() {
+}
+
+void GameModule::Shutdown() {
+}
+
+extern "C" ModuleAbstract* CreateModuleInstance(GameHostInterface *host) {
+  return new GameModule(host);
+}
+
+extern "C" void DestroyModuleInstance(ModuleAbstract *module) {
+  delete reinterpret_cast<GameModule*>(module);
+}
+}  // namespace Game

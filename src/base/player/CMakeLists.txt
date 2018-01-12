@@ -25,7 +25,12 @@ set(SOURCES
         playermodule.h
         playermodule.cpp)
 
-add_library(player SHARED ${SOURCES})
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/playerhostinterface.h
+        ../../public/playermoduleinterface.h)
+
+add_library(player SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(player PROPERTIES PREFIX "")
 set_target_properties(player PROPERTIES OUTPUT_NAME "player-${TARGET_CPU}")
 

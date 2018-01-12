@@ -20,4 +20,29 @@
  * IN THE SOFTWARE.
  */
 
-#include "player/playermodule.h"
+#include "public/moduleabstract.h"
+#include "base/player/playermodule.h"
+
+using Public::ModuleAbstract;
+
+namespace Player {
+PlayerModule::PlayerModule(PlayerHostInterface *host) {
+}
+
+PlayerModule::~PlayerModule() {
+}
+
+void PlayerModule::Init() {
+}
+
+void PlayerModule::Shutdown() {
+}
+
+extern "C" ModuleAbstract* CreateModuleInstance(PlayerHostInterface *host) {
+  return new PlayerModule(host);
+}
+
+extern "C" void DestroyModuleInstance(ModuleAbstract *module) {
+  delete reinterpret_cast<PlayerModule*>(module);
+}
+}  // namespace Player

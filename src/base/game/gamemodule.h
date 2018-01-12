@@ -23,8 +23,20 @@
 #ifndef GAME_GAMEMODULE_H_
 #define GAME_GAMEMODULE_H_
 
+#include "public/gamehostinterface.h"
+#include "public/gamemoduleinterface.h"
+
+using Public::GameHostInterface;
+using Public::GameModuleInterface;
+
 namespace Game {
-class GameModule {
+class GameModule : public GameModuleInterface {
+ public:
+  explicit GameModule(GameHostInterface *host);
+  ~GameModule();
+
+  void Init();
+  void Shutdown();
 };
 };
 

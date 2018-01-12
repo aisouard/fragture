@@ -25,7 +25,12 @@ set(SOURCES
         gamemodule.h
         gamemodule.cpp)
 
-add_library(game SHARED ${SOURCES})
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/gamehostinterface.h
+        ../../public/gamemoduleinterface.h)
+
+add_library(game SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(game PROPERTIES PREFIX "")
 set_target_properties(game PROPERTIES OUTPUT_NAME "game-${TARGET_CPU}")
 
