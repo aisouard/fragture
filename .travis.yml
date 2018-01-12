@@ -36,6 +36,7 @@ before_install:
     export CXX="g++-4.8" CC="gcc-4.8"
   else
     if ! brew ls --version cmake &>/dev/null; then brew update && brew install cmake; fi
+    brew install --HEAD libuv
   fi
 
 - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
