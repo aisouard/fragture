@@ -25,6 +25,7 @@
 
 using Public::ModuleAbstract;
 
+namespace Base {
 namespace Player {
 PlayerModule::PlayerModule(PlayerHostInterface *host) {
 }
@@ -46,3 +47,4 @@ extern "C" void DestroyModuleInstance(ModuleAbstract *module) {
   delete reinterpret_cast<PlayerModule*>(module);
 }
 }  // namespace Player
+}  // namespace Base

@@ -36,7 +36,7 @@ target_link_libraries(fragture
         ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(fragture PROPERTIES SUFFIX "-${TARGET_CPU}")
 
-add_style_check_target(client_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(client_style "${SOURCES}")
 
 install(TARGETS fragture
         RUNTIME DESTINATION .)

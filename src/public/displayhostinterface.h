@@ -26,6 +26,6 @@
 namespace Public {
 class DisplayHostInterface {
 };
-}
+}  // namespace Public
 
 #endif  // PUBLIC_DISPLAYHOSTINTERFACE_H_

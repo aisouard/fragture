@@ -22,8 +22,8 @@
 project(renderer_opengl)
 
 set(SOURCES
-        openglrenderer.h
-        openglrenderer.cpp)
+        renderermodule.h
+        renderermodule.cpp)
 
 add_library(renderer_opengl SHARED ${SOURCES})
 set_target_properties(renderer_opengl PROPERTIES PREFIX "")
@@ -32,4 +32,4 @@ set_target_properties(renderer_opengl PROPERTIES OUTPUT_NAME "renderer-opengl-${
 install(TARGETS renderer_opengl
         LIBRARY DESTINATION .)
 
-add_style_check_target(renderer_opengl_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(renderer_opengl_style "${SOURCES}")

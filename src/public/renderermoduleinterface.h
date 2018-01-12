@@ -33,6 +33,6 @@ class RendererModuleInterface : public ModuleAbstract {
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}
+}  // namespace Public
 
 #endif  // PUBLIC_RENDERERMODULEINTERFACE_H_

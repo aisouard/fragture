@@ -22,8 +22,8 @@
 project(display_sdl2)
 
 set(SOURCES
-        sdl2display.h
-        sdl2display.cpp)
+        displaymodule.h
+        displaymodule.cpp)
 
 add_library(display_sdl2 SHARED ${SOURCES})
 set_target_properties(display_sdl2 PROPERTIES PREFIX "")
@@ -32,4 +32,4 @@ set_target_properties(display_sdl2 PROPERTIES OUTPUT_NAME "display-sdl2-${TARGET
 install(TARGETS display_sdl2
         LIBRARY DESTINATION .)
 
-add_style_check_target(display_sdl2_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(display_sdl2_style "${SOURCES}")

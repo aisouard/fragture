@@ -26,6 +26,6 @@
 namespace Public {
 class RendererHostInterface {
 };
-}
+}  // namespace Public
 
 #endif  // PUBLIC_RENDERERHOSTINTERFACE_H_

@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PLAYER_PLAYERMODULE_H_
-#define PLAYER_PLAYERMODULE_H_
+#ifndef BASE_PLAYER_PLAYERMODULE_H_
+#define BASE_PLAYER_PLAYERMODULE_H_
 
 #include "public/playerhostinterface.h"
 #include "public/playermoduleinterface.h"
@@ -29,6 +29,7 @@
 using Public::PlayerHostInterface;
 using Public::PlayerModuleInterface;
 
+namespace Base {
 namespace Player {
 class PlayerModule : public PlayerModuleInterface {
  public:
@@ -38,6 +39,7 @@ class PlayerModule : public PlayerModuleInterface {
   void Init();
   void Shutdown();
 };
-};
+}  // namespace Player
+}  // namespace Base
 
-#endif  // PLAYER_PLAYERMODULE_H_
+#endif  // BASE_PLAYER_PLAYERMODULE_H_

@@ -31,4 +31,4 @@ set(SOURCES
 add_library(common_script STATIC ${SOURCES})
 target_link_libraries(common_script ${LUAJIT_LIBRARIES})
 
-add_style_check_target(common_script_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(common_script_style "${SOURCES}")

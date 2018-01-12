@@ -29,7 +29,7 @@ add_custom_target(style)
 # Parameters:
 # - TARGET_NAME the name of the target to add
 # - SOURCES_LIST a complete list of source and include files to check
-function(add_style_check_target TARGET_NAME SOURCES_LIST PROJECT_ROOT)
+function(add_style_check_target TARGET_NAME SOURCES_LIST)
 
     if (NOT PYTHONINTERP_FOUND)
         return()
@@ -43,7 +43,7 @@ function(add_style_check_target TARGET_NAME SOURCES_LIST PROJECT_ROOT)
             "${PROJECT_SOURCE_DIR}"
             "${PYTHON_EXECUTABLE}"
             "${STYLE_CHECK_SCRIPT}"
-            "--root=${PROJECT_ROOT}"
+            "--root=${CMAKE_SOURCE_DIR}/src"
             "--quiet"
             ${SOURCES_LIST}
             DEPENDS ${SOURCES_LIST} ${STYLE_CHECK_SCRIPT}

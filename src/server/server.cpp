@@ -28,4 +28,4 @@ void Init() {
 
 void Shutdown() {
 }
-}
+}  // namespace Server

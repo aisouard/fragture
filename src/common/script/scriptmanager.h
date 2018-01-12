@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef SCRIPT_SCRIPTMANAGER_H_
-#define SCRIPT_SCRIPTMANAGER_H_
+#ifndef COMMON_SCRIPT_SCRIPTMANAGER_H_
+#define COMMON_SCRIPT_SCRIPTMANAGER_H_
 
 namespace Common {
 class ScriptManager {
 };
-}
+}  // namespace Common
 
-#endif  // SCRIPT_SCRIPTMANAGER_H_
+#endif  // COMMON_SCRIPT_SCRIPTMANAGER_H_

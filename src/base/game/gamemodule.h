@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef GAME_GAMEMODULE_H_
-#define GAME_GAMEMODULE_H_
+#ifndef BASE_GAME_GAMEMODULE_H_
+#define BASE_GAME_GAMEMODULE_H_
 
 #include "public/gamehostinterface.h"
 #include "public/gamemoduleinterface.h"
@@ -29,6 +29,7 @@
 using Public::GameHostInterface;
 using Public::GameModuleInterface;
 
+namespace Base {
 namespace Game {
 class GameModule : public GameModuleInterface {
  public:
@@ -38,6 +39,7 @@ class GameModule : public GameModuleInterface {
   void Init();
   void Shutdown();
 };
-};
+}  // namespace Game
+}  // namespace Base
 
-#endif  // GAME_GAMEMODULE_H_
+#endif  // BASE_GAME_GAMEMODULE_H_

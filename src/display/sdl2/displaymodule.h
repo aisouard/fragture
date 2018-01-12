@@ -20,4 +20,16 @@
  * IN THE SOFTWARE.
  */
 
-#include "renderer/opengl/openglrenderer.h"
+#ifndef DISPLAY_SDL2_DISPLAYMODULE_H_
+#define DISPLAY_SDL2_DISPLAYMODULE_H_
+
+#include "public/displaymoduleinterface.h"
+
+namespace Display {
+namespace SDL2 {
+class SDL2Display {
+};
+}  // namespace SDL2
+}  // namespace Display
+
+#endif  // DISPLAY_SDL2_DISPLAYMODULE_H_

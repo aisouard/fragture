@@ -20,4 +20,4 @@
  * IN THE SOFTWARE.
  */
 
-#include "display/sdl2/sdl2display.h"
+#include "renderer/opengl/renderermodule.h"

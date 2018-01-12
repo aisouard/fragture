@@ -20,14 +20,14 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef OPENGL_OPENGLRENDERER_H_
-#define OPENGL_OPENGLRENDERER_H_
+#ifndef RENDERER_OPENGL_RENDERERMODULE_H_
+#define RENDERER_OPENGL_RENDERERMODULE_H_
 
 namespace Renderer {
 namespace OpenGL {
-class OpenGLRenderer {
+class RendererModule {
 };
-};
-};
+}  // namespace OpenGL
+}  // namespace Renderer
 
-#endif  // OPENGL_OPENGLRENDERER_H_
+#endif  // RENDERER_OPENGL_RENDERERMODULE_H_

@@ -36,7 +36,7 @@ target_link_libraries(fragtureded
         ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}")
 
-add_style_check_target(dedicated_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(dedicated_style "${SOURCES}")
 
 install(TARGETS fragtureded
         RUNTIME DESTINATION .)

@@ -33,6 +33,6 @@ class GameModuleInterface : public ModuleAbstract {
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}
+}  // namespace Public
 
 #endif  // PUBLIC_GAMEMODULEINTERFACE_H_

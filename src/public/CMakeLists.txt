@@ -32,4 +32,4 @@ set(SOURCES
         rendererhostinterface.h
         renderermoduleinterface.h)
 
-add_style_check_target(public_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(public_style "${SOURCES}")

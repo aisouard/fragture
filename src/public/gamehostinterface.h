@@ -26,6 +26,6 @@
 namespace Public {
 class GameHostInterface {
 };
-}
+}  // namespace Public
 
 #endif  // PUBLIC_GAMEHOSTINTERFACE_H_

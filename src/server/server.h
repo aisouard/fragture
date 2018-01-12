@@ -26,6 +26,6 @@
 namespace Server {
   void Init();
   void Shutdown();
-};
+}  // namespace Server
 
 #endif  // SERVER_SERVER_H_

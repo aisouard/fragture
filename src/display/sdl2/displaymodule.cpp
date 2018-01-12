@@ -20,16 +20,4 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef SDL2_SDL2DISPLAY_H_
-#define SDL2_SDL2DISPLAY_H_
-
-#include "public/displaymoduleinterface.h"
-
-namespace Display {
-namespace SDL2 {
-class SDL2Display {
-};
-};
-};
-
-#endif  // SDL2_SDL2DISPLAY_H_
+#include "display/sdl2/displaymodule.h"

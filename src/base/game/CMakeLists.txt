@@ -37,4 +37,4 @@ set_target_properties(game PROPERTIES OUTPUT_NAME "game-${TARGET_CPU}")
 install(TARGETS game
         LIBRARY DESTINATION base)
 
-add_style_check_target(game_style "${SOURCES}" ${PROJECT_SOURCE_DIR}/..)
+add_style_check_target(game_style "${SOURCES}")
