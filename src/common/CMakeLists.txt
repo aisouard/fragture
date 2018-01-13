@@ -22,3 +22,5 @@
 project(common)
 
 add_subdirectory(script)
+
+add_style_check_target(common_style "main.cpp")

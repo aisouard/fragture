@@ -25,7 +25,7 @@ include_directories(${LIBUV_INCLUDE_DIR})
 include_directories(${BREAKPAD_INCLUDE_DIR})
 
 set(SOURCES
-        main.cpp)
+        ../common/main.cpp)
 
 add_executable(fragture ${SOURCES})
 target_link_libraries(fragture
