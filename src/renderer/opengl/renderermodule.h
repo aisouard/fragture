@@ -32,7 +32,7 @@ using Public::RendererModuleInterface;
 namespace Renderer {
 namespace OpenGL {
 class RendererModule : public RendererModuleInterface {
-public:
+ public:
   explicit RendererModule(RendererHostInterface *host);
   ~RendererModule();
 

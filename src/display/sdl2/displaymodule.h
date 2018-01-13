@@ -32,7 +32,7 @@ using Public::DisplayModuleInterface;
 namespace Display {
 namespace SDL2 {
 class DisplayModule : public DisplayModuleInterface {
-public:
+ public:
   explicit DisplayModule(DisplayHostInterface *host);
   ~DisplayModule();
 
