@@ -46,20 +46,7 @@ include(Package)
 
 if (BUILD_TESTS)
     enable_testing()
-    ExternalProject_Add(
-            googletest
-            GIT_REPOSITORY https://github.com/google/googletest.git
-            UPDATE_COMMAND ""
-            INSTALL_COMMAND ""
-            LOG_DOWNLOAD ON
-            LOG_CONFIGURE ON
-            LOG_BUILD ON)
-
-    ExternalProject_Get_Property(googletest source_dir)
-    set(GTEST_INCLUDE_DIRS ${source_dir}/googletest/include)
-    set(GMOCK_INCLUDE_DIRS ${source_dir}/googlemock/include)
-
-    include_directories(${GTEST_INCLUDE_DIRS})
+    include(GTest)
 endif (BUILD_TESTS)
 
 add_subdirectory(src)
