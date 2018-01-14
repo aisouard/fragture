@@ -42,7 +42,7 @@ target_link_libraries(fragture
         ${LIBUV_LIBRARIES}
         ${ICU_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT})
-set_target_properties(fragture PROPERTIES SUFFIX "-${TARGET_CPU}")
+set_target_properties(fragture PROPERTIES SUFFIX "-${TARGET_CPU}${CMAKE_EXECUTABLE_SUFFIX}")
 
 install(TARGETS fragture
         RUNTIME DESTINATION .)

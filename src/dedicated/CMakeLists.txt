@@ -35,7 +35,7 @@ target_link_libraries(fragtureded
         ${LIBUV_LIBRARIES}
         ${ICU_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT})
-set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}")
+set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}${CMAKE_EXECUTABLE_SUFFIX}")
 
 add_style_check_target(dedicated_style "${SOURCES}")
 
