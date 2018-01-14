@@ -11,6 +11,7 @@ matrix:
           - gcc-4.8
           - g++-4.8
           - libuv-dev
+          - libluajit-5.1-dev
 
     - os: linux
       sudo: required
