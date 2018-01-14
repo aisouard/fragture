@@ -30,6 +30,7 @@ set(SOURCES
         playerhostinterface.h
         playermoduleinterface.h
         rendererhostinterface.h
-        renderermoduleinterface.h)
+        renderermoduleinterface.h
+        ustring.h)
 
 add_style_check_target(public_style "${SOURCES}")
