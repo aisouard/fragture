@@ -25,18 +25,24 @@ include_directories(${LIBUV_INCLUDE_DIR})
 include_directories(${BREAKPAD_INCLUDE_DIR})
 
 set(SOURCES
-        ../common/main.cpp)
+        client.h
+        client.cpp)
 
-add_executable(fragture ${SOURCES})
+add_library(client STATIC ${SOURCES})
+target_link_libraries(client common)
+
+add_style_check_target(client_style "${SOURCES}")
+
+add_executable(fragture ../common/main.cpp)
 target_link_libraries(fragture
+        common
+        client
         server
         ${BREAKPAD_LIBRARY}
         ${LIBUV_LIBRARIES}
         ${ICU_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(fragture PROPERTIES SUFFIX "-${TARGET_CPU}")
-
-add_style_check_target(client_style "${SOURCES}")
 
 install(TARGETS fragture
         RUNTIME DESTINATION .)

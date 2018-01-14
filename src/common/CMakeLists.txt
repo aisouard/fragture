@@ -23,4 +23,12 @@ project(common)
 
 add_subdirectory(script)
 
-add_style_check_target(common_style "main.cpp")
+set(SOURCES
+        common.h
+        common.cpp)
+
+add_library(common STATIC ${SOURCES})
+target_link_libraries(common common_script)
+
+set(SOURCES ${SOURCES} main.cpp)
+add_style_check_target(common_style "${SOURCES}")

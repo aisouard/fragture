@@ -30,6 +30,7 @@ set(SOURCES
 add_executable(fragtureded ${SOURCES})
 target_link_libraries(fragtureded
         server
+        common
         ${BREAKPAD_LIBRARY}
         ${LIBUV_LIBRARIES}
         ${ICU_LIBRARIES}
