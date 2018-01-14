@@ -19,18 +19,29 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-include_directories(.)
+project(utils)
 
-add_subdirectory(display)
-add_subdirectory(renderer)
-add_subdirectory(base)
+set(SOURCES
+        stringutil.h
+        stringutil.cpp
+        trienode.h)
 
-include_directories(${ICU_INCLUDE_DIRS})
-include_directories(${LIBUV_INCLUDE_DIRS})
+add_library(utils STATIC ${SOURCES})
 
-add_subdirectory(public)
-add_subdirectory(utils)
-add_subdirectory(common)
-add_subdirectory(server)
-add_subdirectory(client)
-add_subdirectory(dedicated)
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            stringutil_unittest.cpp
+            trienode_unittest.cpp)
+
+    add_executable(utils_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(utils_unittest
+            utils
+            ${ICU_LIBRARIES}
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(UtilsUnittest utils_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
+add_style_check_target(utils_style "${SOURCES}")
