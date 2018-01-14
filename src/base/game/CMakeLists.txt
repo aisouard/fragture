@@ -35,6 +35,7 @@ set_target_properties(game PROPERTIES PREFIX "")
 set_target_properties(game PROPERTIES OUTPUT_NAME "game-${TARGET_CPU}")
 
 install(TARGETS game
+        RUNTIME DESTINATION base
         LIBRARY DESTINATION base)
 
 add_style_check_target(game_style "${SOURCES}")

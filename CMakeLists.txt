@@ -29,7 +29,10 @@ set(FRAGTURE_PATCH_VERSION 0)
 
 set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_definitions(-Dnullptr=NULL)
+
+if (NOT MSVC)
+    add_definitions(-Dnullptr=NULL)
+endif (NOT MSVC)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
