@@ -35,6 +35,7 @@ set_target_properties(display_sdl2 PROPERTIES PREFIX "")
 set_target_properties(display_sdl2 PROPERTIES OUTPUT_NAME "display-sdl2-${TARGET_CPU}")
 
 install(TARGETS display_sdl2
+        RUNTIME DESTINATION .
         LIBRARY DESTINATION .)
 
 add_style_check_target(display_sdl2_style "${SOURCES}")

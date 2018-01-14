@@ -35,6 +35,7 @@ set_target_properties(renderer_opengl PROPERTIES PREFIX "")
 set_target_properties(renderer_opengl PROPERTIES OUTPUT_NAME "renderer-opengl-${TARGET_CPU}")
 
 install(TARGETS renderer_opengl
+        RUNTIME DESTINATION .
         LIBRARY DESTINATION .)
 
 add_style_check_target(renderer_opengl_style "${SOURCES}")
