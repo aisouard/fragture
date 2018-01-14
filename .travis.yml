@@ -41,15 +41,6 @@ before_install:
     brew install --HEAD libuv
   fi
 
-- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-- PATH="${DEPS_DIR}/depot_tools:$PATH"
-- mkdir breakpad
-- cd breakpad
-- fetch breakpad
-- cd src
-- ./configure
-- sudo make install
-
 - cd ${TRAVIS_BUILD_DIR}
 - cmake --version
 
