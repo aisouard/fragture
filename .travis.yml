@@ -53,4 +53,4 @@ install:
 - cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTS=1 -DCMAKE_INSTALL_PREFIX=. -DTARGET_CPU=$TARGET_CPU ..
 
 script:
-- make style test package
+- make style all test package
