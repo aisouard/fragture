@@ -19,16 +19,13 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-project(common)
-
-add_subdirectory(module)
+project(common_module)
 
 set(SOURCES
-        common.h
-        common.cpp)
+        module.h
+        module.cpp)
 
-add_library(common STATIC ${SOURCES})
-target_link_libraries(common common_module)
+add_library(common_module STATIC ${SOURCES})
+target_link_libraries(common_module ${LIBUV_LIBRARIES})
 
-set(SOURCES ${SOURCES} main.cpp)
-add_style_check_target(common_style "${SOURCES}")
+add_style_check_target(common_module_style "${SOURCES}")
