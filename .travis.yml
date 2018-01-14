@@ -40,6 +40,7 @@ before_install:
     brew update
     if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
     brew install --HEAD libuv
+    brew install icu4c
     brew install luajit
   fi
 
