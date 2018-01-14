@@ -20,16 +20,6 @@
  * IN THE SOFTWARE.
  */
 
-#include <client/linux/handler/exception_handler.h>
-
-static bool DumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
-                         void* context, bool succeeded) {
-  return succeeded;
-}
-
 int main(int argc, const char **argv) {
-  google_breakpad::MinidumpDescriptor descriptor("/tmp");
-  google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback, NULL,
-                                       true, -1);
   return 0;
 }
