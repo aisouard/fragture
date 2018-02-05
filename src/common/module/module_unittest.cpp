@@ -20,15 +20,11 @@
  * IN THE SOFTWARE.
  */
 
-#include <lua.hpp>
-#include "common/script/scriptmanager.h"
+#include "gtest/gtest.h"
+#include "common/module/module.h"
 
-namespace Common {
-namespace Script {
-void ScriptManager::Init() {
-}
+using Common::Module;
 
-void ScriptManager::Shutdown() {
+TEST(Module_Load, NonExisting) {
+  Module::Load("/invalid");
 }
-}  // namespace Script
-}  // namespace Common

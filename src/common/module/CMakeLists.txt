@@ -28,4 +28,19 @@ set(SOURCES
 add_library(common_module STATIC ${SOURCES})
 target_link_libraries(common_module ${LIBUV_LIBRARIES})
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            module_unittest.cpp)
+
+    add_executable(common_module_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(common_module_unittest
+            common_module
+            ${ICU_LIBRARIES}
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(CommonModuleUnittest common_module_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(common_module_style "${SOURCES}")

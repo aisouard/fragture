@@ -25,6 +25,27 @@
 
 using Utils::StringUtil;
 
+TEST(StringUtil_Concat, SingleWord) {
+  UStringVector input;
+  UString output;
+
+  input.push_back("hello");
+  StringUtil::Concat(input, ",", &output);
+
+  ASSERT_EQ(output, UString::fromUTF8("hello"));
+}
+
+TEST(StringUtil_Concat, TwoWords) {
+  UStringVector input;
+  UString output;
+
+  input.push_back("hello");
+  input.push_back("world");
+  StringUtil::Concat(input, ",", &output);
+
+  ASSERT_EQ(output, UString::fromUTF8("hello,world"));
+}
+
 TEST(StringUtil_Tokenize, SingleWord) {
   UStringVector output;
 

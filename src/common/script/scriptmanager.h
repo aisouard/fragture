@@ -24,8 +24,13 @@
 #define COMMON_SCRIPT_SCRIPTMANAGER_H_
 
 namespace Common {
+namespace Script {
 class ScriptManager {
+ public:
+  static void Init();
+  static void Shutdown();
 };
+}  // namespace Script
 }  // namespace Common
 
 #endif  // COMMON_SCRIPT_SCRIPTMANAGER_H_
