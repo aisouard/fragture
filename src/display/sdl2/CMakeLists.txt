@@ -38,4 +38,17 @@ install(TARGETS display_sdl2
         RUNTIME DESTINATION .
         LIBRARY DESTINATION .)
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            displaymodule_unittest.cpp)
+
+    add_executable(display_sdl2_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(display_sdl2_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(DisplaySdl2Unittest display_sdl2_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(display_sdl2_style "${SOURCES}")

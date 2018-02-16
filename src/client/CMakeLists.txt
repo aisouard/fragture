@@ -31,6 +31,19 @@ set(SOURCES
 add_library(client STATIC ${SOURCES})
 target_link_libraries(client common)
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            client_unittest.cpp)
+
+    add_executable(client_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(client_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(ClientUnittest client_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(client_style "${SOURCES}")
 
 add_executable(fragture ../common/main.cpp)

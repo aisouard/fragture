@@ -30,5 +30,18 @@ set(SOURCES
 add_library(common STATIC ${SOURCES})
 target_link_libraries(common common_module)
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            common_unittest.cpp)
+
+    add_executable(common_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(common_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(CommonUnittest common_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 set(SOURCES ${SOURCES} main.cpp)
 add_style_check_target(common_style "${SOURCES}")

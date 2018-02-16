@@ -38,4 +38,17 @@ install(TARGETS player
         RUNTIME DESTINATION base
         LIBRARY DESTINATION base)
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            playermodule_unittest.cpp)
+
+    add_executable(base_player_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(base_player_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(BasePlayerUnittest base_player_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(player_style "${SOURCES}")

@@ -38,4 +38,17 @@ install(TARGETS renderer_opengl
         RUNTIME DESTINATION .
         LIBRARY DESTINATION .)
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            renderermodule_unittest.cpp)
+
+    add_executable(renderer_opengl_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(renderer_opengl_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(RendererOpenglUnittest renderer_opengl_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(renderer_opengl_style "${SOURCES}")

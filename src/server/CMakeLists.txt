@@ -27,4 +27,17 @@ set(SOURCES
 
 add_library(server STATIC ${SOURCES})
 
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            server_unittest.cpp)
+
+    add_executable(server_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(server_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(ServerUnittest server_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
 add_style_check_target(server_style "${SOURCES}")
