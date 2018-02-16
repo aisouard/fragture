@@ -41,3 +41,16 @@ if (BUILD_TESTS)
 endif (BUILD_TESTS)
 
 add_style_check_target(server_style "${SOURCES}")
+
+add_executable(fragtureded ../common/main.cpp)
+target_link_libraries(fragtureded
+        common
+        server
+        ${BREAKPAD_LIBRARY}
+        ${LIBUV_LIBRARIES}
+        ${ICU_LIBRARIES}
+        ${CMAKE_THREAD_LIBS_INIT})
+set_target_properties(fragtureded PROPERTIES SUFFIX "-${TARGET_CPU}${CMAKE_EXECUTABLE_SUFFIX}")
+
+install(TARGETS fragtureded
+        RUNTIME DESTINATION .)
