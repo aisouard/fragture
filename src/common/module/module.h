@@ -32,11 +32,13 @@ using Public::ModuleAbstract;
 using Public::UString;
 
 namespace Common {
+namespace Module {
 class Module {
  public:
   static ModuleAbstract* Load(const UString &path);
   static void Unload(ModuleAbstract* module);
 };
+}  // namespace Module
 }  // namespace Common
 
 #endif  // COMMON_MODULE_MODULE_H_

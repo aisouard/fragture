@@ -31,6 +31,7 @@ using Public::ModuleAbstract;
 using Public::UString;
 
 namespace Common {
+namespace Module {
 ModuleAbstract *Module::Load(const UString &path) {
   std::string str;
   uv_lib_t *lib = new uv_lib_t;
@@ -67,4 +68,5 @@ void Module::Unload(ModuleAbstract *module) {
 
   delete lib;
 }
+}  // namespace Module
 }  // namespace Common

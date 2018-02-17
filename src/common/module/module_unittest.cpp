@@ -23,7 +23,7 @@
 #include "gtest/gtest.h"
 #include "common/module/module.h"
 
-using Common::Module;
+using Common::Module::Module;
 
 TEST(Module_Load, NonExisting) {
   Module::Load("/invalid");
