@@ -22,6 +22,8 @@
 project(public)
 
 set(SOURCES
+        audiohostinterface.h
+        audiomoduleinterface.h
         displayhostinterface.h
         displaymoduleinterface.h
         gamehostinterface.h

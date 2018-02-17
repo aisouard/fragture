@@ -19,18 +19,36 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-include_directories(.)
+project(audio_dummy)
 
-add_subdirectory(audio)
-add_subdirectory(display)
-add_subdirectory(renderer)
-add_subdirectory(base)
+set(SOURCES
+        audiomodule.h
+        audiomodule.cpp)
 
-include_directories(${ICU_INCLUDE_DIRS})
-include_directories(${LIBUV_INCLUDE_DIRS})
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/audiohostinterface.h
+        ../../public/audiomoduleinterface.h)
 
-add_subdirectory(public)
-add_subdirectory(utils)
-add_subdirectory(common)
-add_subdirectory(server)
-add_subdirectory(client)
+add_library(audio_dummy SHARED ${SOURCES} ${PUBLIC_HEADERS})
+set_target_properties(audio_dummy PROPERTIES PREFIX "")
+set_target_properties(audio_dummy PROPERTIES OUTPUT_NAME "audio-dummy-${TARGET_CPU}")
+
+install(TARGETS audio_dummy
+        RUNTIME DESTINATION .
+        LIBRARY DESTINATION .)
+
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            audiomodule_unittest.cpp)
+
+    add_executable(audio_dummy_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(audio_dummy_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(AudioDummyUnittest audio_dummy_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
+add_style_check_target(audio_dummy_style "${SOURCES}")
