@@ -21,4 +21,5 @@
 
 project(renderer)
 
+add_subdirectory(dummy)
 add_subdirectory(opengl)

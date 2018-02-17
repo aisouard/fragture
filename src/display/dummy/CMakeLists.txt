@@ -19,7 +19,36 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-project(display)
+project(display_dummy)
 
-add_subdirectory(dummy)
-add_subdirectory(sdl2)
+set(SOURCES
+        displaymodule.h
+        displaymodule.cpp)
+
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/displayhostinterface.h
+        ../../public/displaymoduleinterface.h)
+
+add_library(display_dummy SHARED ${SOURCES} ${PUBLIC_HEADERS})
+set_target_properties(display_dummy PROPERTIES PREFIX "")
+set_target_properties(display_dummy PROPERTIES OUTPUT_NAME "display-dummy-${TARGET_CPU}")
+
+install(TARGETS display_dummy
+        RUNTIME DESTINATION .
+        LIBRARY DESTINATION .)
+
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            displaymodule_unittest.cpp)
+
+    add_executable(display_dummy_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(display_dummy_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(DisplayDummyUnittest display_dummy_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
+add_style_check_target(display_dummy_style "${SOURCES}")

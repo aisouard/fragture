@@ -19,7 +19,36 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-project(display)
+project(renderer_dummy)
 
-add_subdirectory(dummy)
-add_subdirectory(sdl2)
+set(SOURCES
+        renderermodule.h
+        renderermodule.cpp)
+
+set(PUBLIC_HEADERS
+        ../../public/moduleabstract.h
+        ../../public/rendererhostinterface.h
+        ../../public/renderermoduleinterface.h)
+
+add_library(renderer_dummy SHARED ${SOURCES} ${PUBLIC_HEADERS})
+set_target_properties(renderer_dummy PROPERTIES PREFIX "")
+set_target_properties(renderer_dummy PROPERTIES OUTPUT_NAME "renderer-dummy-${TARGET_CPU}")
+
+install(TARGETS renderer_dummy
+        RUNTIME DESTINATION .
+        LIBRARY DESTINATION .)
+
+if (BUILD_TESTS)
+    set(UNITTEST_SOURCES
+            renderermodule_unittest.cpp)
+
+    add_executable(renderer_dummy_unittest ${UNITTEST_SOURCES})
+    target_link_libraries(renderer_dummy_unittest
+            ${GTEST_BOTH_LIBRARIES}
+            ${CMAKE_THREAD_LIBS_INIT})
+
+    add_test(RendererDummyUnittest renderer_dummy_unittest)
+    set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
+endif (BUILD_TESTS)
+
+add_style_check_target(renderer_dummy_style "${SOURCES}")
