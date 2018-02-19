@@ -19,33 +19,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-project(fragture)
-cmake_minimum_required(VERSION 3.5)
-
-set(CMAKE_CXX_STANDARD 98)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-if (NOT MSVC)
-    add_definitions(-Dnullptr=NULL)
-endif (NOT MSVC)
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
-
-set(LIBUV_USE_STATIC 1)
-find_package(LibUV REQUIRED)
-find_package(ICU COMPONENTS uc REQUIRED)
-find_package(Threads REQUIRED)
-
-include(Version)
-include(ExternalProject)
-include(CppLint)
-include(GitDefinitions)
-include(DetectArch)
-include(Package)
-
-if (BUILD_TESTS)
-    enable_testing()
-    include(GTest)
-endif (BUILD_TESTS)
-
-add_subdirectory(src)
+set(FRAGTURE_MAJOR_VERSION 1)
+set(FRAGTURE_MINOR_VERSION 0)
+set(FRAGTURE_PATCH_VERSION 0)
+set(FRAGTURE_VERSION ${FRAGTURE_MAJOR_VERSION}.${FRAGTURE_MINOR_VERSION}.${FRAGTURE_PATCH_VERSION})
