@@ -37,8 +37,7 @@ if (BUILD_TESTS)
     target_link_libraries(utils_unittest
             utils
             ${ICU_LIBRARIES}
-            ${GTEST_BOTH_LIBRARIES}
-            ${CMAKE_THREAD_LIBS_INIT})
+            ${GTEST_BOTH_LIBRARIES})
 
     add_test(UtilsUnittest utils_unittest)
     set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})

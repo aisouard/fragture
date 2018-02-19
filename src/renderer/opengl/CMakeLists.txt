@@ -44,8 +44,7 @@ if (BUILD_TESTS)
 
     add_executable(renderer_opengl_unittest ${UNITTEST_SOURCES})
     target_link_libraries(renderer_opengl_unittest
-            ${GTEST_BOTH_LIBRARIES}
-            ${CMAKE_THREAD_LIBS_INIT})
+            ${GTEST_BOTH_LIBRARIES})
 
     add_test(RendererOpenglUnittest renderer_opengl_unittest)
     set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})

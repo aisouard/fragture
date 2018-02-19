@@ -36,8 +36,7 @@ if (BUILD_TESTS)
 
     add_executable(common_unittest ${UNITTEST_SOURCES})
     target_link_libraries(common_unittest
-            ${GTEST_BOTH_LIBRARIES}
-            ${CMAKE_THREAD_LIBS_INIT})
+            ${GTEST_BOTH_LIBRARIES})
 
     add_test(CommonUnittest common_unittest)
     set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})

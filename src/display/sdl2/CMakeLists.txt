@@ -44,8 +44,7 @@ if (BUILD_TESTS)
 
     add_executable(display_sdl2_unittest ${UNITTEST_SOURCES})
     target_link_libraries(display_sdl2_unittest
-            ${GTEST_BOTH_LIBRARIES}
-            ${CMAKE_THREAD_LIBS_INIT})
+            ${GTEST_BOTH_LIBRARIES})
 
     add_test(DisplaySdl2Unittest display_sdl2_unittest)
     set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})

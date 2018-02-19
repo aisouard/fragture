@@ -44,8 +44,7 @@ if (BUILD_TESTS)
 
     add_executable(display_dummy_unittest ${UNITTEST_SOURCES})
     target_link_libraries(display_dummy_unittest
-            ${GTEST_BOTH_LIBRARIES}
-            ${CMAKE_THREAD_LIBS_INIT})
+            ${GTEST_BOTH_LIBRARIES})
 
     add_test(DisplayDummyUnittest display_dummy_unittest)
     set(SOURCES ${SOURCES} ${UNITTEST_SOURCES})
