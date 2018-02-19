@@ -20,12 +20,19 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_GAMEHOSTINTERFACE_H_
-#define PUBLIC_GAMEHOSTINTERFACE_H_
+#ifndef BASE_GAME_GAMEMODULEINTERFACE_H_
+#define BASE_GAME_GAMEMODULEINTERFACE_H_
+
+#include "common/module/moduleabstract.h"
 
 namespace Public {
-class GameHostInterface {
+class GameModuleInterface : public ModuleAbstract {
+ public:
+  virtual ~GameModuleInterface() {}
+
+  virtual void Init() = 0;
+  virtual void Shutdown() = 0;
 };
 }  // namespace Public
 
-#endif  // PUBLIC_GAMEHOSTINTERFACE_H_
+#endif  // BASE_GAME_GAMEMODULEINTERFACE_H_

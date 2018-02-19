@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_DISPLAYHOSTINTERFACE_H_
-#define PUBLIC_DISPLAYHOSTINTERFACE_H_
+#ifndef RENDERER_RENDERERHOSTINTERFACE_H_
+#define RENDERER_RENDERERHOSTINTERFACE_H_
 
 namespace Public {
-class DisplayHostInterface {
+class RendererHostInterface {
 };
 }  // namespace Public
 
-#endif  // PUBLIC_DISPLAYHOSTINTERFACE_H_
+#endif  // RENDERER_RENDERERHOSTINTERFACE_H_

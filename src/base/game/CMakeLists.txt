@@ -26,9 +26,9 @@ set(SOURCES
         gamemodule.cpp)
 
 set(PUBLIC_HEADERS
-        ../../public/moduleabstract.h
-        ../../public/gamehostinterface.h
-        ../../public/gamemoduleinterface.h)
+        ../../common/module/moduleabstract.h
+        gamehostinterface.h
+        gamemoduleinterface.h)
 
 add_library(game SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(game PROPERTIES PREFIX "")

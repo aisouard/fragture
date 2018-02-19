@@ -26,9 +26,9 @@ set(SOURCES
         audiomodule.cpp)
 
 set(PUBLIC_HEADERS
-        ../../public/moduleabstract.h
-        ../../public/audiohostinterface.h
-        ../../public/audiomoduleinterface.h)
+        ../../common/module/moduleabstract.h
+        ../audiohostinterface.h
+        ../audiomoduleinterface.h)
 
 add_library(audio_dummy SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(audio_dummy PROPERTIES PREFIX "")

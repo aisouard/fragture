@@ -23,8 +23,8 @@
 #ifndef RENDERER_DUMMY_RENDERERMODULE_H_
 #define RENDERER_DUMMY_RENDERERMODULE_H_
 
-#include "public/renderermoduleinterface.h"
-#include "public/rendererhostinterface.h"
+#include "renderer/renderermoduleinterface.h"
+#include "renderer/rendererhostinterface.h"
 
 using Public::RendererHostInterface;
 using Public::RendererModuleInterface;

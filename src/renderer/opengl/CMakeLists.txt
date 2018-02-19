@@ -26,9 +26,9 @@ set(SOURCES
         renderermodule.cpp)
 
 set(PUBLIC_HEADERS
-        ../../public/moduleabstract.h
-        ../../public/rendererhostinterface.h
-        ../../public/renderermoduleinterface.h)
+        ../../common/module/moduleabstract.h
+        ../rendererhostinterface.h
+        ../renderermoduleinterface.h)
 
 add_library(renderer_opengl SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(renderer_opengl PROPERTIES PREFIX "")

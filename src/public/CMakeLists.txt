@@ -22,17 +22,13 @@
 project(public)
 
 set(SOURCES
-        audiohostinterface.h
-        audiomoduleinterface.h
-        displayhostinterface.h
-        displaymoduleinterface.h
-        gamehostinterface.h
-        gamemoduleinterface.h
-        moduleabstract.h
-        playerhostinterface.h
-        playermoduleinterface.h
-        rendererhostinterface.h
-        renderermoduleinterface.h
+        ../audio/audiohostinterface.h
+        ../audio/audiomoduleinterface.h
+        ../display/displayhostinterface.h
+        ../display/displaymoduleinterface.h
+        ../base/game/gamehostinterface.h
+        ../base/game/gamemoduleinterface.h
+        ../common/module/moduleabstract.h
         ustring.h)
 
 add_style_check_target(public_style "${SOURCES}")

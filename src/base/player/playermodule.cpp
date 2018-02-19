@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-#include "public/moduleabstract.h"
+#include "common/module/moduleabstract.h"
 #include "base/player/playermodule.h"
 
 using Public::ModuleAbstract;

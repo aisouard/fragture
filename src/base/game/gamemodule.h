@@ -23,8 +23,8 @@
 #ifndef BASE_GAME_GAMEMODULE_H_
 #define BASE_GAME_GAMEMODULE_H_
 
-#include "public/gamehostinterface.h"
-#include "public/gamemoduleinterface.h"
+#include "base/game/gamehostinterface.h"
+#include "base/game/gamemoduleinterface.h"
 
 using Public::GameHostInterface;
 using Public::GameModuleInterface;

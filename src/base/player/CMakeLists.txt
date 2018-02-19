@@ -26,9 +26,9 @@ set(SOURCES
         playermodule.cpp)
 
 set(PUBLIC_HEADERS
-        ../../public/moduleabstract.h
-        ../../public/playerhostinterface.h
-        ../../public/playermoduleinterface.h)
+        ../../common/module/moduleabstract.h
+        playerhostinterface.h
+        playermoduleinterface.h)
 
 add_library(player SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(player PROPERTIES PREFIX "")

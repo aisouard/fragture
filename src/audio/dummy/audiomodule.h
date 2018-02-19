@@ -23,8 +23,8 @@
 #ifndef AUDIO_DUMMY_AUDIOMODULE_H_
 #define AUDIO_DUMMY_AUDIOMODULE_H_
 
-#include "public/audiomoduleinterface.h"
-#include "public/audiohostinterface.h"
+#include "audio/audiomoduleinterface.h"
+#include "audio/audiohostinterface.h"
 
 using Public::AudioHostInterface;
 using Public::AudioModuleInterface;

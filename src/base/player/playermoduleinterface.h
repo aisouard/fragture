@@ -20,19 +20,19 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_DISPLAYMODULEINTERFACE_H_
-#define PUBLIC_DISPLAYMODULEINTERFACE_H_
+#ifndef PUBLIC_PLAYERMODULEINTERFACE_H_
+#define PUBLIC_PLAYERMODULEINTERFACE_H_
 
-#include "public/moduleabstract.h"
+#include "common/module/moduleabstract.h"
 
 namespace Public {
-class DisplayModuleInterface : public ModuleAbstract {
+class PlayerModuleInterface : public ModuleAbstract {
  public:
-  virtual ~DisplayModuleInterface() {}
+  virtual ~PlayerModuleInterface() {}
 
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
 }  // namespace Public
 
-#endif  // PUBLIC_DISPLAYMODULEINTERFACE_H_
+#endif  // PUBLIC_PLAYERMODULEINTERFACE_H_

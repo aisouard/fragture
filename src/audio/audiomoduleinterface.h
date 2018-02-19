@@ -20,10 +20,10 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_AUDIOMODULEINTERFACE_H_
-#define PUBLIC_AUDIOMODULEINTERFACE_H_
+#ifndef AUDIO_AUDIOMODULEINTERFACE_H_
+#define AUDIO_AUDIOMODULEINTERFACE_H_
 
-#include "public/moduleabstract.h"
+#include "common/module/moduleabstract.h"
 
 namespace Public {
 class AudioModuleInterface : public ModuleAbstract {
@@ -35,4 +35,4 @@ class AudioModuleInterface : public ModuleAbstract {
 };
 }  // namespace Public
 
-#endif  // PUBLIC_AUDIOMODULEINTERFACE_H_
+#endif  // AUDIO_AUDIOMODULEINTERFACE_H_

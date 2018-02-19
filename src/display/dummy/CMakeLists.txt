@@ -26,9 +26,9 @@ set(SOURCES
         displaymodule.cpp)
 
 set(PUBLIC_HEADERS
-        ../../public/moduleabstract.h
-        ../../public/displayhostinterface.h
-        ../../public/displaymoduleinterface.h)
+        ../../common/module/moduleabstract.h
+        ../displayhostinterface.h
+        ../displaymoduleinterface.h)
 
 add_library(display_dummy SHARED ${SOURCES} ${PUBLIC_HEADERS})
 set_target_properties(display_dummy PROPERTIES PREFIX "")

@@ -24,7 +24,6 @@
 #include <string>
 
 #include "common/module/module.h"
-#include "public/moduleabstract.h"
 #include "public/ustring.h"
 
 using Public::ModuleAbstract;

@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_RENDERERHOSTINTERFACE_H_
-#define PUBLIC_RENDERERHOSTINTERFACE_H_
+#ifndef BASE_GAME_GAMEHOSTINTERFACE_H_
+#define BASE_GAME_GAMEHOSTINTERFACE_H_
 
 namespace Public {
-class RendererHostInterface {
+class GameHostInterface {
 };
 }  // namespace Public
 
-#endif  // PUBLIC_RENDERERHOSTINTERFACE_H_
+#endif  // BASE_GAME_GAMEHOSTINTERFACE_H_

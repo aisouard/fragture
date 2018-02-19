@@ -23,8 +23,8 @@
 #ifndef DISPLAY_SDL2_DISPLAYMODULE_H_
 #define DISPLAY_SDL2_DISPLAYMODULE_H_
 
-#include "public/displaymoduleinterface.h"
-#include "public/displayhostinterface.h"
+#include "display/displaymoduleinterface.h"
+#include "display/displayhostinterface.h"
 
 using Public::DisplayHostInterface;
 using Public::DisplayModuleInterface;

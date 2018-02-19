@@ -23,8 +23,8 @@
 #ifndef BASE_PLAYER_PLAYERMODULE_H_
 #define BASE_PLAYER_PLAYERMODULE_H_
 
-#include "public/playerhostinterface.h"
-#include "public/playermoduleinterface.h"
+#include "base/player/playerhostinterface.h"
+#include "base/player/playermoduleinterface.h"
 
 using Public::PlayerHostInterface;
 using Public::PlayerModuleInterface;

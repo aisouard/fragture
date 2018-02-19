@@ -20,12 +20,19 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_AUDIOHOSTINTERFACE_H_
-#define PUBLIC_AUDIOHOSTINTERFACE_H_
+#ifndef RENDERER_RENDERERMODULEINTERFACE_H_
+#define RENDERER_RENDERERMODULEINTERFACE_H_
+
+#include "common/module/moduleabstract.h"
 
 namespace Public {
-class AudioHostInterface {
+class RendererModuleInterface : public ModuleAbstract {
+ public:
+  virtual ~RendererModuleInterface() {}
+
+  virtual void Init() = 0;
+  virtual void Shutdown() = 0;
 };
 }  // namespace Public
 
-#endif  // PUBLIC_AUDIOHOSTINTERFACE_H_
+#endif  // RENDERER_RENDERERMODULEINTERFACE_H_

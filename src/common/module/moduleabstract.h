@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_MODULEABSTRACT_H_
-#define PUBLIC_MODULEABSTRACT_H_
+#ifndef COMMON_MODULE_MODULEABSTRACT_H_
+#define COMMON_MODULE_MODULEABSTRACT_H_
 
 namespace Public {
 class ModuleAbstract {
@@ -41,4 +41,4 @@ class ModuleAbstract {
 };
 }  // namespace Public
 
-#endif  // PUBLIC_MODULEABSTRACT_H_
+#endif  // COMMON_MODULE_MODULEABSTRACT_H_
