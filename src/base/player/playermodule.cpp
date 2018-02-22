@@ -23,7 +23,7 @@
 #include "common/module/moduleabstract.h"
 #include "base/player/playermodule.h"
 
-using Public::ModuleAbstract;
+using Common::Module::ModuleAbstract;
 
 namespace Base {
 namespace Player {

@@ -23,9 +23,9 @@
 #ifndef RENDERER_RENDERERHOSTINTERFACE_H_
 #define RENDERER_RENDERERHOSTINTERFACE_H_
 
-namespace Public {
+namespace Renderer {
 class RendererHostInterface {
 };
-}  // namespace Public
+}  // namespace Renderer
 
 #endif  // RENDERER_RENDERERHOSTINTERFACE_H_

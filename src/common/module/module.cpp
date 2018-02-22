@@ -26,7 +26,6 @@
 #include "common/module/module.h"
 #include "common/types/ustring.h"
 
-using Public::ModuleAbstract;
 using Common::Types::UString;
 
 namespace Common {

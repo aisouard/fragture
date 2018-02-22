@@ -26,9 +26,6 @@
 #include "base/game/gamehostinterface.h"
 #include "base/game/gamemoduleinterface.h"
 
-using Public::GameHostInterface;
-using Public::GameModuleInterface;
-
 namespace Base {
 namespace Game {
 class GameModule : public GameModuleInterface {

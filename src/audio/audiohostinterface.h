@@ -23,9 +23,9 @@
 #ifndef AUDIO_AUDIOHOSTINTERFACE_H_
 #define AUDIO_AUDIOHOSTINTERFACE_H_
 
-namespace Public {
+namespace Audio {
 class AudioHostInterface {
 };
-}  // namespace Public
+}  // namespace Audio
 
 #endif  // AUDIO_AUDIOHOSTINTERFACE_H_

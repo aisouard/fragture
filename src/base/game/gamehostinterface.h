@@ -23,9 +23,11 @@
 #ifndef BASE_GAME_GAMEHOSTINTERFACE_H_
 #define BASE_GAME_GAMEHOSTINTERFACE_H_
 
-namespace Public {
+namespace Base {
+namespace Game {
 class GameHostInterface {
 };
-}  // namespace Public
+}  // namespace Game
+}  // namespace Base
 
 #endif  // BASE_GAME_GAMEHOSTINTERFACE_H_

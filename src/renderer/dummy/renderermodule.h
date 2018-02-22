@@ -26,9 +26,6 @@
 #include "renderer/renderermoduleinterface.h"
 #include "renderer/rendererhostinterface.h"
 
-using Public::RendererHostInterface;
-using Public::RendererModuleInterface;
-
 namespace Renderer {
 namespace Dummy {
 class RendererModule : public RendererModuleInterface {

@@ -23,7 +23,7 @@
 #include "common/module/moduleabstract.h"
 #include "renderer/dummy/renderermodule.h"
 
-using Public::ModuleAbstract;
+using Common::Module::ModuleAbstract;
 
 namespace Renderer {
 namespace Dummy {

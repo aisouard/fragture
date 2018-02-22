@@ -23,7 +23,8 @@
 #ifndef COMMON_MODULE_MODULEABSTRACT_H_
 #define COMMON_MODULE_MODULEABSTRACT_H_
 
-namespace Public {
+namespace Common {
+namespace Module {
 class ModuleAbstract {
  public:
   virtual ~ModuleAbstract() {}
@@ -39,6 +40,7 @@ class ModuleAbstract {
  private:
   void *_handle;
 };
-}  // namespace Public
+}  // namespace Module
+}  // namespace Common
 
 #endif  // COMMON_MODULE_MODULEABSTRACT_H_

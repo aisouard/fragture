@@ -23,6 +23,8 @@
 #include "gtest/gtest.h"
 #include "utils/stringutil.h"
 
+using Common::Types::UString;
+using Common::Types::UStringVector;
 using Utils::StringUtil;
 
 TEST(StringUtil_Concat, SingleWord) {

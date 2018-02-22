@@ -23,7 +23,7 @@
 #include "common/module/moduleabstract.h"
 #include "renderer/opengl/renderermodule.h"
 
-using Public::ModuleAbstract;
+using Common::Module::ModuleAbstract;
 
 namespace Renderer {
 namespace OpenGL {

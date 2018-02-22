@@ -26,9 +26,6 @@
 #include "renderer/renderermoduleinterface.h"
 #include "renderer/rendererhostinterface.h"
 
-using Public::RendererHostInterface;
-using Public::RendererModuleInterface;
-
 namespace Renderer {
 namespace OpenGL {
 class RendererModule : public RendererModuleInterface {

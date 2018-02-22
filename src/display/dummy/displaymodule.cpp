@@ -23,7 +23,7 @@
 #include "common/module/moduleabstract.h"
 #include "display/dummy/displaymodule.h"
 
-using Public::ModuleAbstract;
+using Common::Module::ModuleAbstract;
 
 namespace Display {
 namespace Dummy {

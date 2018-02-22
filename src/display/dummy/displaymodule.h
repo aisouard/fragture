@@ -26,9 +26,6 @@
 #include "display/displaymoduleinterface.h"
 #include "display/displayhostinterface.h"
 
-using Public::DisplayHostInterface;
-using Public::DisplayModuleInterface;
-
 namespace Display {
 namespace Dummy {
 class DisplayModule : public DisplayModuleInterface {

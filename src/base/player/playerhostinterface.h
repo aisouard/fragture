@@ -23,9 +23,11 @@
 #ifndef PUBLIC_PLAYERHOSTINTERFACE_H_
 #define PUBLIC_PLAYERHOSTINTERFACE_H_
 
-namespace Public {
+namespace Base {
+namespace Player {
 class PlayerHostInterface {
 };
-}  // namespace Public
+}  // namespace Player
+}  // namespace Base
 
 #endif  // PUBLIC_PLAYERHOSTINTERFACE_H_

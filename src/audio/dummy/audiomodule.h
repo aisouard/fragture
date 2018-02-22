@@ -26,9 +26,6 @@
 #include "audio/audiomoduleinterface.h"
 #include "audio/audiohostinterface.h"
 
-using Public::AudioHostInterface;
-using Public::AudioModuleInterface;
-
 namespace Audio {
 namespace Dummy {
 class AudioModule : public AudioModuleInterface {

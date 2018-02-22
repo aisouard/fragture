@@ -25,14 +25,14 @@
 
 #include "common/module/moduleabstract.h"
 
-namespace Public {
-class AudioModuleInterface : public ModuleAbstract {
+namespace Audio {
+class AudioModuleInterface : public Common::Module::ModuleAbstract {
  public:
   virtual ~AudioModuleInterface() {}
 
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}  // namespace Public
+}  // namespace Audio
 
 #endif  // AUDIO_AUDIOMODULEINTERFACE_H_

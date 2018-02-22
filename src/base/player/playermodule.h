@@ -26,9 +26,6 @@
 #include "base/player/playerhostinterface.h"
 #include "base/player/playermoduleinterface.h"
 
-using Public::PlayerHostInterface;
-using Public::PlayerModuleInterface;
-
 namespace Base {
 namespace Player {
 class PlayerModule : public PlayerModuleInterface {

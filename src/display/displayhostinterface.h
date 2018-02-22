@@ -23,9 +23,9 @@
 #ifndef DISPLAY_DISPLAYHOSTINTERFACE_H_
 #define DISPLAY_DISPLAYHOSTINTERFACE_H_
 
-namespace Public {
+namespace Display {
 class DisplayHostInterface {
 };
-}  // namespace Public
+}  // namespace Display
 
 #endif  // DISPLAY_DISPLAYHOSTINTERFACE_H_

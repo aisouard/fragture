@@ -23,7 +23,7 @@
 #include "common/module/moduleabstract.h"
 #include "audio/dummy/audiomodule.h"
 
-using Public::ModuleAbstract;
+using Common::Module::ModuleAbstract;
 
 namespace Audio {
 namespace Dummy {

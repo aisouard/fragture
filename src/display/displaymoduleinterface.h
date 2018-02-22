@@ -25,14 +25,14 @@
 
 #include "common/module/moduleabstract.h"
 
-namespace Public {
-class DisplayModuleInterface : public ModuleAbstract {
+namespace Display {
+class DisplayModuleInterface : public Common::Module::ModuleAbstract {
  public:
   virtual ~DisplayModuleInterface() {}
 
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}  // namespace Public
+}  // namespace Display
 
 #endif  // DISPLAY_DISPLAYMODULEINTERFACE_H_

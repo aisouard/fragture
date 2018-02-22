@@ -25,14 +25,14 @@
 
 #include "common/module/moduleabstract.h"
 
-namespace Public {
-class RendererModuleInterface : public ModuleAbstract {
+namespace Renderer {
+class RendererModuleInterface : public Common::Module::ModuleAbstract {
  public:
   virtual ~RendererModuleInterface() {}
 
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}  // namespace Public
+}  // namespace Renderer
 
 #endif  // RENDERER_RENDERERMODULEINTERFACE_H_

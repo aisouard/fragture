@@ -26,8 +26,6 @@
 #include <map>
 #include "common/types/ustring.h"
 
-using Common::Types::UString;
-
 namespace Utils {
 template <typename T>
 class TrieNode {
@@ -60,7 +58,7 @@ class TrieNode {
     _value = value;
   }
 
-  void Insert(const UString &key, T value) {
+  void Insert(const Common::Types::UString &key, T value) {
     if (!key.length()) {
       _value = value;
       return;
@@ -72,12 +70,12 @@ class TrieNode {
       _children[c] = new TrieNode<T>();
     }
 
-    UString next;
+    Common::Types::UString next;
     key.extract(1, key.length(), next);
     _children[c]->Insert(next, value);
   }
 
-  TrieNode *Find(const UString &key) {
+  TrieNode *Find(const Common::Types::UString &key) {
     if (!key.length()) {
       return this;
     }
@@ -88,12 +86,12 @@ class TrieNode {
       return NULL;
     }
 
-    UString next;
+    Common::Types::UString next;
     key.extract(1, key.length(), next);
     return _children[c]->Find(next);
   }
 
-  void Delete(const UString &key) {
+  void Delete(const Common::Types::UString &key) {
     if (!key.length()) {
       return;
     }
@@ -104,7 +102,7 @@ class TrieNode {
       return;
     }
 
-    UString next;
+    Common::Types::UString next;
     key.extract(1, key.length(), next);
     if (!next.length()) {
       delete (*result).second;

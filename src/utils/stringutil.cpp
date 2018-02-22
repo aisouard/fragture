@@ -24,7 +24,9 @@
 #include "common/types/ustring.h"
 #include "utils/stringutil.h"
 
+using Common::Types::UString;
 using Common::Types::UStringIterator;
+using Common::Types::UStringVector;
 
 namespace Utils {
 void StringUtil::Concat(const UStringVector &input, const UString &glue,

@@ -25,14 +25,16 @@
 
 #include "common/module/moduleabstract.h"
 
-namespace Public {
-class PlayerModuleInterface : public ModuleAbstract {
+namespace Base {
+namespace Player {
+class PlayerModuleInterface : public Common::Module::ModuleAbstract {
  public:
   virtual ~PlayerModuleInterface() {}
 
   virtual void Init() = 0;
   virtual void Shutdown() = 0;
 };
-}  // namespace Public
+}  // namespace Player
+}  // namespace Base
 
 #endif  // PUBLIC_PLAYERMODULEINTERFACE_H_

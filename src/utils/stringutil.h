@@ -25,15 +25,14 @@
 
 #include "common/types/ustring.h"
 
-using Common::Types::UString;
-using Common::Types::UStringVector;
-
 namespace Utils {
 class StringUtil {
  public:
-  static void Concat(const UStringVector &input, const UString &glue,
-                     UString *output);
-  static void Tokenize(const UString &str, UStringVector *output);
+  static void Concat(const Common::Types::UStringVector &input,
+                     const Common::Types::UString &glue,
+                     Common::Types::UString *output);
+  static void Tokenize(const Common::Types::UString &str,
+                       Common::Types::UStringVector *output);
 };
 }  // namespace Utils
 

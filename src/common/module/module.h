@@ -28,14 +28,11 @@
 #include "common/module/moduleabstract.h"
 #include "common/types/ustring.h"
 
-using Public::ModuleAbstract;
-using Common::Types::UString;
-
 namespace Common {
 namespace Module {
 class Module {
  public:
-  static ModuleAbstract* Load(const UString &path);
+  static ModuleAbstract* Load(const Common::Types::UString &path);
   static void Unload(ModuleAbstract* module);
 };
 }  // namespace Module
