@@ -19,9 +19,9 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-project(public)
+project(common_types)
 
 set(SOURCES
         ustring.h)
 
-add_style_check_target(public_style "${SOURCES}")
+add_style_check_target(common_types_style "${SOURCES}")

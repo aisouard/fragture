@@ -23,10 +23,10 @@
 #ifndef UTILS_STRINGUTIL_H_
 #define UTILS_STRINGUTIL_H_
 
-#include "public/ustring.h"
+#include "common/types/ustring.h"
 
-using Public::UString;
-using Public::UStringVector;
+using Common::Types::UString;
+using Common::Types::UStringVector;
 
 namespace Utils {
 class StringUtil {

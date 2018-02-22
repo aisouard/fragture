@@ -21,10 +21,10 @@
  */
 
 #include <vector>
-#include "public/ustring.h"
+#include "common/types/ustring.h"
 #include "utils/stringutil.h"
 
-using Public::UStringIterator;
+using Common::Types::UStringIterator;
 
 namespace Utils {
 void StringUtil::Concat(const UStringVector &input, const UString &glue,

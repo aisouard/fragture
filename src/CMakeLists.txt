@@ -29,7 +29,6 @@ add_subdirectory(base)
 include_directories(${ICU_INCLUDE_DIRS})
 include_directories(${LIBUV_INCLUDE_DIRS})
 
-add_subdirectory(public)
 add_subdirectory(utils)
 add_subdirectory(common)
 add_subdirectory(server)

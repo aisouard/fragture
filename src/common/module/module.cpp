@@ -24,10 +24,10 @@
 #include <string>
 
 #include "common/module/module.h"
-#include "public/ustring.h"
+#include "common/types/ustring.h"
 
 using Public::ModuleAbstract;
-using Public::UString;
+using Common::Types::UString;
 
 namespace Common {
 namespace Module {

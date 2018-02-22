@@ -24,9 +24,9 @@
 #define UTILS_TRIENODE_H_
 
 #include <map>
-#include "public/ustring.h"
+#include "common/types/ustring.h"
 
-using Public::UString;
+using Common::Types::UString;
 
 namespace Utils {
 template <typename T>

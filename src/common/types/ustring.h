@@ -20,17 +20,19 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef PUBLIC_USTRING_H_
-#define PUBLIC_USTRING_H_
+#ifndef COMMON_TYPES_USTRING_H_
+#define COMMON_TYPES_USTRING_H_
 
 #include <vector>
 #include "unicode/schriter.h"
 #include "unicode/unistr.h"
 
-namespace Public {
+namespace Common {
+namespace Types {
 typedef icu::UnicodeString UString;
 typedef icu::StringCharacterIterator UStringIterator;
 typedef std::vector<UString> UStringVector;
-}  // namespace Public
+}  // namespace Types
+}  // namespace Common
 
-#endif  // PUBLIC_USTRING_H_
+#endif  // COMMON_TYPES_USTRING_H_
