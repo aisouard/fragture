@@ -22,9 +22,9 @@
 
 #include <string>
 #include "gtest/gtest.h"
-#include "utils/trienode.h"
+#include "common/utils/trienode.h"
 
-using Utils::TrieNode;
+using Common::Utils::TrieNode;
 
 TEST(TrieNode, InsertEmpty) {
   TrieNode<int*> *t = new TrieNode<int*>();

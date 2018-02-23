@@ -22,12 +22,13 @@
 
 #include <vector>
 #include "common/types/ustring.h"
-#include "utils/stringutil.h"
+#include "common/utils/stringutil.h"
 
 using Common::Types::UString;
 using Common::Types::UStringIterator;
 using Common::Types::UStringVector;
 
+namespace Common {
 namespace Utils {
 void StringUtil::Concat(const UStringVector &input, const UString &glue,
                         UString *output) {
@@ -107,3 +108,4 @@ void StringUtil::Tokenize(const UString &str, UStringVector *output) {
   }
 }
 }  // namespace Utils
+}  // namespace Common

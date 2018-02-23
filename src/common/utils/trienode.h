@@ -20,12 +20,13 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef UTILS_TRIENODE_H_
-#define UTILS_TRIENODE_H_
+#ifndef COMMON_UTILS_TRIENODE_H_
+#define COMMON_UTILS_TRIENODE_H_
 
 #include <map>
 #include "common/types/ustring.h"
 
+namespace Common {
 namespace Utils {
 template <typename T>
 class TrieNode {
@@ -118,5 +119,6 @@ class TrieNode {
   TrieNodeMap _children;
 };
 }  // namespace Utils
+}  // namespace Common
 
-#endif  // UTILS_TRIENODE_H_
+#endif  // COMMON_UTILS_TRIENODE_H_

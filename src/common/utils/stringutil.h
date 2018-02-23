@@ -20,11 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-#ifndef UTILS_STRINGUTIL_H_
-#define UTILS_STRINGUTIL_H_
+#ifndef COMMON_UTILS_STRINGUTIL_H_
+#define COMMON_UTILS_STRINGUTIL_H_
 
 #include "common/types/ustring.h"
 
+namespace Common {
 namespace Utils {
 class StringUtil {
  public:
@@ -35,5 +36,6 @@ class StringUtil {
                        Common::Types::UStringVector *output);
 };
 }  // namespace Utils
+}  // namespace Common
 
-#endif  // UTILS_STRINGUTIL_H_
+#endif  // COMMON_UTILS_STRINGUTIL_H_

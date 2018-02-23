@@ -21,11 +21,11 @@
  */
 
 #include "gtest/gtest.h"
-#include "utils/stringutil.h"
+#include "common/utils/stringutil.h"
 
 using Common::Types::UString;
 using Common::Types::UStringVector;
-using Utils::StringUtil;
+using Common::Utils::StringUtil;
 
 TEST(StringUtil_Concat, SingleWord) {
   UStringVector input;

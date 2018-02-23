@@ -23,6 +23,7 @@ project(common)
 
 add_subdirectory(module)
 add_subdirectory(types)
+add_subdirectory(utils)
 
 set(SOURCES
         common.h
