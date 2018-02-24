@@ -25,10 +25,6 @@ add_subdirectory(audio)
 add_subdirectory(display)
 add_subdirectory(renderer)
 add_subdirectory(base)
-
-include_directories(${ICU_INCLUDE_DIRS})
-include_directories(${LIBUV_INCLUDE_DIRS})
-
 add_subdirectory(common)
 add_subdirectory(server)
 add_subdirectory(client)

@@ -21,6 +21,9 @@
 
 project(server)
 
+include_directories(${LIBUV_INCLUDE_DIR})
+include_directories(${BREAKPAD_INCLUDE_DIR})
+
 set(SOURCES
         server.h
         server.cpp)
