@@ -40,7 +40,8 @@ before_install:
     brew update
     if ! brew ls --version cmake &>/dev/null; then brew install cmake; fi
     brew install --HEAD libuv
-    brew install icu4c && brew link --force icu4c
+    brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9b26ef0bad5f88dc5096a88483b38d8155d76c78/Formula/icu4c.rb
+    brew link --force icu4c
     brew install luajit
   fi
 
