@@ -48,11 +48,12 @@ before_install:
 - cmake --version
 
 install:
-- git submodule init
-- git submodule update
 - mkdir out
 - cd out
 - cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTS=1 -DCMAKE_INSTALL_PREFIX=. -DTARGET_CPU=$TARGET_CPU ..
 
 script:
-- make style all test package
+- make style
+- make
+- make test
+- make package
