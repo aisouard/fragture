@@ -41,6 +41,7 @@ include(Package)
 if (BUILD_TESTS)
     enable_testing()
     include(GTest)
+    set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -fprofile-arcs -ftest-coverage ${CMAKE_CXX_FLAGS_DEBUG}")
 endif (BUILD_TESTS)
 
 add_subdirectory(src)

@@ -1,31 +1,43 @@
 matrix:
   include:
-    - os: linux
-      sudo: required
-      env: TARGET_CPU=x64
-      addons:
-        apt: &x64-apt
-          sources:
-          - ubuntu-toolchain-r-test
-          packages:
-          - gcc-4.8
-          - g++-4.8
-          - libuv-dev
-          - libluajit-5.1-dev
+  - os: linux
+    sudo: required
+    env:
+    - TARGET_CPU=x64
+    - CMAKE_BUILD_TYPE=Debug
+    addons:
+      apt: &1
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - gcc-4.8
+        - g++-4.8
+        - libuv-dev
+        - libluajit-5.1-dev
 
-    - os: linux
-      sudo: required
-      env: TARGET_CPU=x86
-      addons:
-        apt: *x64-apt
+  - os: linux
+    sudo: required
+    env:
+    - TARGET_CPU=x64
+    - CMAKE_BUILD_TYPE=Release
+    addons:
+      apt: *1
 
-    - os: osx
-      osx_image: xcode7.3
-      env: TARGET_CPU=x64
+  - os: linux
+    sudo: required
+    env:
+    - TARGET_CPU=x86
+    - CMAKE_BUILD_TYPE=Release
+    addons:
+      apt: *1
+
+  - os: osx
+    osx_image: xcode7.3
+    env:
+    - TARGET_CPU=x64
+    - CMAKE_BUILD_TYPE=Release
 
 language: cpp
-
-
 before_install:
 - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
 - mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
@@ -35,6 +47,7 @@ before_install:
     mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
     export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     export CXX="g++-4.8" CC="gcc-4.8"
+    pip install --user cpp-coveralls
   else
     rvm --default use 2.3
     brew update
@@ -42,18 +55,33 @@ before_install:
     brew install --HEAD libuv
     brew install icu4c && brew link --force icu4c
     brew install luajit
+    brew install pyenv
+    eval "$(pyenv init -)"
+    pyenv install 2.7.6
+    pyenv global 2.7.6
+    pyenv rehash
+    pip install cpp-coveralls
+    pyenv rehash
   fi
-
 - cd ${TRAVIS_BUILD_DIR}
 - cmake --version
-
 install:
 - mkdir out
 - cd out
-- cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTS=1 -DCMAKE_INSTALL_PREFIX=. -DTARGET_CPU=$TARGET_CPU ..
-
+- cmake -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE -DBUILD_TESTS=1 -DCMAKE_INSTALL_PREFIX=.
+  -DTARGET_CPU=$TARGET_CPU ..
 script:
 - make style
 - make
 - make test
-- make package
+- |
+  if [[ "${CMAKE_BUILD_TYPE}" == "Debug" ]]; then
+    cd ..
+    coveralls -i src --gcov-options '\-lp'
+  elif [[ "${CMAKE_BUILD_TYPE}" == "Release" ]]; then
+    make package
+  fi
+
+env:
+  global:
+    secure: mLdDk2IoexMP1wt3cOOl7lk1T4Zyh7/y43QvS8okbeFIJD3tv699WfsXniO5i65SEvAaExuLlpAjzx5adEZ1cnWWzff+ZJmmugxaZPIB6lZr1RmN/+dx3B38E0telsJIs0mxC9mWfBIl10eOe0bJltIO8LR+GhgeDEaCGwcX1DdyZYHUAuDzgDPjavZlH7hmjsGfFjQYu8bRxDyW5qnokBW2U6MoS+4Ql8EU8EDpFY3Tys31IN/RD+Ggun1nUObX4xGxKYir+iyhFIWWPWawKLRBooNCEgBoHgibcKDPUowO4wWf+rpR+KJOe6NPF+Y1zU7qDtiURt3xVbavq5PjJEgPdWawTmXRNHQfG+YOEb/kPhd2FwELIdPV0cj8qIg9vYEReXRrx5XgJunptEDdH11Y4PeWnyqVZkxO9pN0hp7QwHYik6JtNA0dQo7P16P4AsJVjal8OUTkj8C1fCpWMutky/121uSjiAUcX/b4+c/heY4n+Kbr0IKHsNWdck/SJq63W7PZ/5NvFl/xfq+g29GYgvj9RE6EuCit+/por6StbeobYFIlfbAuGA1ne1a2wixQ6XmQIq5heXYezaKGxYCuGixwBC1w8+VG0Rc+sn/NeJA/BJLUiFgXehWpCYNlwPQ2yeIoTtKTZswG5XdvMEHpkdzZg40iL7Jr2DsGSt8=
